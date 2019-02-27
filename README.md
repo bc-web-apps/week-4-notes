@@ -8,7 +8,7 @@ Now that you've gotten Laravel installed, we are going to dive into setting up s
 
 This is one of the most important files in your application, it's the **main routing file**. This will define all of the possible routes in your application. If you look into your main code directly `blog` you will see the folder `routes/`, within that is your `web.php` file:
 
-![filestructure](/Users/bdweix/Code/projects/web-app-notes/week-4-notes/src/filestructure.png)
+![filestructure](src/filestructure.png)
 
 Open up web.php and you'll see a one starting function in there, just ignore it. This is the typical layout for `web.php` routes:
 
@@ -51,7 +51,7 @@ The second part of this object is the `LoginController@show`, which itself has t
 
 Controllers are located within the main `app/` folder and then within the `Http/` folder. You can see the file structure like this: 
 
-![Screen Shot 2019-02-27 at 3.36.48 PM](/Users/bdweix/Code/projects/web-app-notes/week-4-notes/src/Screen Shot 2019-02-27 at 3.36.48 PM.png)
+![Screen Shot 2019-02-27 at 3.36.48 PM](src/Screen Shot 2019-02-27 at 3.36.48 PM.png)
 
 ### Creating Controller's
 
@@ -61,11 +61,11 @@ Now to start we don't have any controllers, you will need to create one. To do t
 php artisan make:controller DashboardController
 ```
 
-![Screen Shot 2019-02-27 at 3.45.34 PM](/Users/bdweix/Code/projects/web-app-notes/week-4-notes/src/Screen Shot 2019-02-27 at 3.45.34 PM.png)
+![Screen Shot 2019-02-27 at 3.45.34 PM](src/Screen Shot 2019-02-27 at 3.45.34 PM.png)
 
 This command creates a controller called `DashboardController` automatically for you! Let's open it up then: 
 
-![Screen Shot 2019-02-27 at 3.46.10 PM](/Users/bdweix/Code/projects/web-app-notes/week-4-notes/src/Screen Shot 2019-02-27 at 3.46.10 PM.png)
+![Screen Shot 2019-02-27 at 3.46.10 PM](src/Screen Shot 2019-02-27 at 3.46.10 PM.png)
 
 You can see that in our navigation pane on the left we have a new file called `DashboardController`, and it's currently open in the viewer on the right. For now you can ignore almost everything in the file, just note that on `Line 8` there is a `{` and on `Line 10` there is a closing `}`. Between these two brackets we will add all of the functions defined in our `Web.php` routing file!
 
@@ -92,11 +92,11 @@ This is what a new controller method looks like:
 
 The complete controller would now look like this: 
 
-![Screen Shot 2019-02-27 at 3.55.41 PM](/Users/bdweix/Code/projects/web-app-notes/week-4-notes/src/Screen Shot 2019-02-27 at 3.55.41 PM.png)
+![Screen Shot 2019-02-27 at 3.55.41 PM](src/Screen Shot 2019-02-27 at 3.55.41 PM.png)
 
 Before we break down what's happening, this is the final output if you now go to `blog.test/home`:
 
-![Screen Shot 2019-02-27 at 3.58.06 PM](/Users/bdweix/Code/projects/web-app-notes/week-4-notes/src/Screen Shot 2019-02-27 at 3.58.06 PM.png)
+![Screen Shot 2019-02-27 at 3.58.06 PM](src/Screen Shot 2019-02-27 at 3.58.06 PM.png)
 
 Let's break down exactly what is happening now. First, the user is going to the route `/home`, and the application sends them to the `DashboardController` and the `show` method on that. Inside the show method we are taking in a `$request` object of the Type `Request`. For this example, our method doesn't do anything besides return the string:
 
@@ -116,7 +116,7 @@ Instead of returning `HTML`, we can create a `view` that the function can return
 
 Views are located within the `resources/` folder and within the `views/` folder inside of that. See the navigation panel here:
 
-![Screen Shot 2019-02-27 at 4.03.59 PM](/Users/bdweix/Code/projects/web-app-notes/week-4-notes/src/Screen Shot 2019-02-27 at 4.03.59 PM.png)
+![Screen Shot 2019-02-27 at 4.03.59 PM](src/Screen Shot 2019-02-27 at 4.03.59 PM.png)
 
 You can see that we start with the `welcome.blade.php` file, which is Laravel's welcome page. Please check it out and you can see a lot of the content that we covered in Week 2 with `HTML`!
 
@@ -124,7 +124,7 @@ You can see that we start with the `welcome.blade.php` file, which is Laravel's 
 
 To create a new view, simply right click on the `views` folder and click "Create New". Name your new file: `profile.blade.php`
 
-![Screen Shot 2019-02-27 at 4.06.35 PM](/Users/bdweix/Code/projects/web-app-notes/week-4-notes/src/Screen Shot 2019-02-27 at 4.06.35 PM.png)
+![Screen Shot 2019-02-27 at 4.06.35 PM](src/Screen Shot 2019-02-27 at 4.06.35 PM.png)
 
 Let's now create an HTML document inside of this new `profile.blade.php` file. Remember: this is really just an HTML file:
 
@@ -170,7 +170,7 @@ The `view` function lets us return files within the `views` folder that we just 
 
 If the `view` was within a folder, we could access it as such:
 
-![Screen Shot 2019-02-27 at 4.13.46 PM](/Users/bdweix/Code/projects/web-app-notes/week-4-notes/src/Screen Shot 2019-02-27 at 4.13.46 PM.png)
+![Screen Shot 2019-02-27 at 4.13.46 PM](src/Screen Shot 2019-02-27 at 4.13.46 PM.png)
 
 The controller would now be:
 
@@ -183,7 +183,7 @@ The controller would now be:
 
 In this situation, the `pages.profile` says to go into the `pages` folder and find the file called `profile`. If we load our webpage it should now return this new HTML page:
 
-![Screen Shot 2019-02-27 at 4.15.18 PM](/Users/bdweix/Code/projects/web-app-notes/week-4-notes/src/Screen Shot 2019-02-27 at 4.15.18 PM.png)
+![Screen Shot 2019-02-27 at 4.15.18 PM](src/Screen Shot 2019-02-27 at 4.15.18 PM.png)
 
 ## Passing Variables to Views
 
@@ -219,7 +219,7 @@ Now if we reload the page you will notice it is exactly the same. What if we wan
   </ul>
 ```
 
-The program will search through our `HTML` and look for a set of `{{ }}`. If it finds any moustaches, it will then look if it has the variable and if so replace it with what was passed through the `compact` function. Our new webpage looks like this: ![Screen Shot 2019-02-27 at 4.23.55 PM](/Users/bdweix/Code/projects/web-app-notes/week-4-notes/src/Screen Shot 2019-02-27 at 4.23.55 PM.png)
+The program will search through our `HTML` and look for a set of `{{ }}`. If it finds any moustaches, it will then look if it has the variable and if so replace it with what was passed through the `compact` function. Our new webpage looks like this: ![Screen Shot 2019-02-27 at 4.23.55 PM](src/Screen Shot 2019-02-27 at 4.23.55 PM.png)
 
 What you've just learned is extremely powerful! Start playing around and see what you can do.
 
